@@ -17,7 +17,7 @@ const ADD_COLOR = (() => {
     case B:
       return B
     default:
-      return COLOR
+      return B
   }
 })()
 
