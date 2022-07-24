@@ -1,18 +1,21 @@
-module.exports = api => {
-  api.cache(true);
+module.exports = (api) => {
+  api.cache(true)
 
   return {
-      "presets": [
-          ["@babel/preset-env", {
-              targets: [
-                  "last 1 version",
-                  "> 1%",
-                  "maintained node versions",
-                  "not dead"
-              ],
-              useBuiltIns: "usage",
-              corejs: 3
-          }]
-      ]
+    presets: [
+      [
+        "@babel/preset-env",
+        {
+          targets: [
+            "last 1 version",
+            "> 1%",
+            "maintained node versions",
+            "not dead",
+          ],
+          useBuiltIns: "usage",
+          corejs: 3,
+        },
+      ],
+    ],
   }
 }

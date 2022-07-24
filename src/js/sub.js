@@ -1,2 +1,2 @@
-utils.log('hello from sub.js'); 
+utils.log("hello from sub.js");
 jQuery();
