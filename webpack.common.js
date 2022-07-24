@@ -1,16 +1,14 @@
-require("dotenv").config()
 const path = require("path")
 const { ProvidePlugin } = require("webpack")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const Dotenv = require("dotenv-webpack")
+// const env = require("dotenv").config()
 
 // const COLOR = process.env.COLOR
 // console.log(COLOR)
 // const ADD_COLOR = (() => {
 //   switch (COLOR) {
-//     case A:
-//     case B:
 //     case A:
 //       return A
 //     default:
@@ -87,7 +85,7 @@ module.exports = ({ outputFile, assetFile, htmlMinifyOption }) => ({
     ],
   },
   plugins: [
-    new Dotenv({}),
+    new Dotenv(),
     new MiniCssExtractPlugin({
       filename: `${outputFile}.css`,
     }),
