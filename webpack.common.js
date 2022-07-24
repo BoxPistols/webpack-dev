@@ -8,7 +8,7 @@ const dotenv = require("dotenv").config({ path: __dirname + "/.env" })
 const A = "A"
 const B = "B"
 
-const COLOR = process.env.COLOR || A
+const COLOR = process.env.COLOR
 
 const ADD_COLOR = (() => {
   switch (COLOR) {
@@ -17,9 +17,18 @@ const ADD_COLOR = (() => {
     case B:
       return B
     default:
-      return B
+      return A
   }
 })()
+
+// switch (COLOR) {
+//   case A:
+//     return A
+//   case B:
+//     return B
+//   default:
+//     return A
+// }
 
 // const setColor = "A"
 
