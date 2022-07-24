@@ -42,3 +42,5 @@ temp/
 .svn
 *.codekit
 *.scssc
+
+/.env

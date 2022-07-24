@@ -1,3 +1,4 @@
+require("dotenv").config()
 const path = require("path")
 const { ProvidePlugin } = require("webpack")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
@@ -5,6 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const Dotenv = require("dotenv-webpack")
 
 // const COLOR = process.env.COLOR
+// console.log(COLOR)
 // const ADD_COLOR = (() => {
 //   switch (COLOR) {
 //     case A:
