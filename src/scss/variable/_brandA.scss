@@ -1,3 +1,10 @@
+@import "./global";
+
 :root {
   --bgColor: tomato;
+}
+
+.tx {
+  color: var(--white);
+  background-color: var(--black);
 }
