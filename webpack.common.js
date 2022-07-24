@@ -5,8 +5,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const Dotenv = require("dotenv-webpack")
 const dotenv = require("dotenv").config({ path: __dirname + "/.env" })
 
-const A = "A"
-const B = "B"
+const A = "a"
+const B = "b"
 
 const COLOR = process.env.COLOR
 
@@ -20,17 +20,6 @@ const ADD_COLOR = (() => {
       return A
   }
 })()
-
-// switch (COLOR) {
-//   case A:
-//     return A
-//   case B:
-//     return B
-//   default:
-//     return A
-// }
-
-// const setColor = "A"
 
 module.exports = ({ outputFile, assetFile, htmlMinifyOption }) => ({
   entry: { app: "./src/js/app.js", sub: "./src/js/sub.js" },
@@ -76,7 +65,7 @@ module.exports = ({ outputFile, assetFile, htmlMinifyOption }) => ({
               sourceMap: true,
               // prependData: or
               // additionalData: `@import "./src/scss/variable/_brand${setColor}.scss";`,
-              additionalData: `@import "./src/scss/variable/_brand${ADD_COLOR}.scss";`,
+              additionalData: `@import "./src/scss/variable/_brand_${ADD_COLOR}.scss";`,
             },
           },
         ],
