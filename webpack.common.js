@@ -3,20 +3,25 @@ const { ProvidePlugin } = require("webpack")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const Dotenv = require("dotenv-webpack")
-// const env = require("dotenv").config()
+const dotenv = require("dotenv").config({ path: __dirname + "/.env" })
 
-// const COLOR = process.env.COLOR
-// console.log(COLOR)
-// const ADD_COLOR = (() => {
-//   switch (COLOR) {
-//     case A:
-//       return A
-//     default:
-//       return B
-//   }
-// })()
+const A = "A"
+const B = "B"
 
-const setColor = "B"
+const COLOR = process.env.COLOR || A
+
+const ADD_COLOR = (() => {
+  switch (COLOR) {
+    case A:
+      return A
+    case B:
+      return B
+    default:
+      return COLOR
+  }
+})()
+
+// const setColor = "A"
 
 module.exports = ({ outputFile, assetFile, htmlMinifyOption }) => ({
   entry: { app: "./src/js/app.js", sub: "./src/js/sub.js" },
@@ -61,8 +66,8 @@ module.exports = ({ outputFile, assetFile, htmlMinifyOption }) => ({
             options: {
               sourceMap: true,
               // prependData: or
-              additionalData: `@import "./src/scss/variable/_brand${setColor}.scss";`,
-              // additionalData: `@import "./src/scss/variable/_brand${ADD_COLOR}.scss";`,
+              // additionalData: `@import "./src/scss/variable/_brand${setColor}.scss";`,
+              additionalData: `@import "./src/scss/variable/_brand${ADD_COLOR}.scss";`,
             },
           },
         ],
