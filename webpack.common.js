@@ -3,22 +3,32 @@ const { ProvidePlugin } = require("webpack")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const Dotenv = require("dotenv-webpack")
-const dotenv = require("dotenv").config({ path: __dirname + "/.env" })
+require("dotenv").config()
+// const dotenv = require("dotenv").config({ path: __dirname + "/.env" })
 
-const A = "a"
-const B = "b"
+const A = "A"
+const B = "B"
+// const C = "C"
 
-const COLOR = process.env.COLOR
+const GET_COLOR = process.env.COLOR
 
 const ADD_COLOR = (() => {
-  switch (COLOR) {
-    case A:
-      return A
-    case B:
-      return B
-    default:
-      return A
+  console.log(GET_COLOR)
+  if (GET_COLOR === A) {
+    return A
+  } else if (GET_COLOR === B) {
+    return B
+  } else {
+    return A
   }
+  // switch (GET_COLOR) {
+  //   case A:
+  //     return A
+  //   case B:
+  //     return B
+  //   default:
+  //     return C
+  // }
 })()
 
 module.exports = ({ outputFile, assetFile, htmlMinifyOption }) => ({
